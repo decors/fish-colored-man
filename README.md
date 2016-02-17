@@ -33,3 +33,12 @@ set -g plugin_colored_man_pages_bold (set_color -o magenta)
 set -g plugin_colored_man_pages_standout (set_color 586e75; set_color -b white)
 set -g plugin_colored_man_pages_underline (set_color -u 586e75)
 ```
+
+See also `man set_color`, or you can use **ANSI color sequence**
+
+```fish
+set -g plugin_colored_man_pages_blink (printf "\e[1;38;5;175m")
+set -g plugin_colored_man_pages_bold (printf "\e[1;38;5;110m")
+set -g plugin_colored_man_pages_standout (printf "\e[38;5;255m\e[48;5;24m")
+set -g plugin_colored_man_pages_underline (printf "\e[4;38;5;249m")
+```
