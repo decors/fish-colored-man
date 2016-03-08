@@ -17,26 +17,5 @@ function man --description 'Format and display manual pages'
     set -lx LESS_TERMCAP_ue $end
     set -lx LESS '-R'
     
-    set option $argv[1]
-    switch "$option"
-        case "--help" "-h"
-            command man --help
-            printf "\n"
-            printf "* fish-shell colored man pages plugin\n\n"
-            printf "  You can override colors.\n"
-            printf "  Add the following options to your \e[1m`config.fish`\e[0m.\n"
-            printf "\n"
-            printf "  colored_man_pages_blink     : blinking\n"
-            printf "  colored_man_pages_bold      : bold\n"
-            printf "  colored_man_pages_standout  : standout mode\n"
-            printf "  colored_man_pages_underline : underline\n"
-            printf "\n"
-            printf "  Sample using set_color:\n"
-            printf "    set -g colored_man_pages_bold (set_color -o red)\n"
-            printf "\n"
-            printf "  Sample using ANSI color sequence:\n"
-            printf "    set -g colored_man_pages_bold (printf \"\\e\[1;38;5;175m\")\n"
-        case "*"
-            command man $argv
-    end
+    command man $argv
 end
