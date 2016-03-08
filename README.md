@@ -1,4 +1,4 @@
-# fish-colored-man-pages
+# colored man pages
 
 Color-enabled man pages plugin for fish-shell.
 
@@ -6,10 +6,16 @@ Color-enabled man pages plugin for fish-shell.
 
 ## Install
 
-With [Fisherman](https://github.com/fisherman/fisherman)
+[Fisherman](https://github.com/fisherman/fisherman)
 
 ```fish
 fisher install decors/fish-colored-man-pages
+```
+
+[Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
+
+```fish
+omf install https://github.com/decors/fish-colored-man-pages
 ```
 
 ## Color options
