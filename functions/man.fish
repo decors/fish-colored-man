@@ -1,5 +1,9 @@
 function man --description 'Format and display manual pages'
-    set -lx MANPATH {$__fish_datadir,$fisher_config,$fisher_home}/man $MANPATH ""
+    set -lx MANPATH $__fish_datadir/man $MANPATH ""
+    
+    if type "fisher" ^/dev/null >&2
+        set -x MANPATH {$fisher_config,$fisher_home}/man $MANPATH ""
+    end
     
     set -q colored_man_pages_blink; and set blink $colored_man_pages_blink; or set blink (set_color -o red)
     set -q colored_man_pages_bold; and set bold $colored_man_pages_bold; or set bold (set_color -o 5fafd7)
