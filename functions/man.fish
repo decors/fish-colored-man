@@ -5,10 +5,15 @@ function man --description 'Format and display manual pages'
         set -x MANPATH {$fisher_config,$fisher_home}/man $MANPATH ""
     end
     
-    set -q colored_man_pages_blink; and set blink $colored_man_pages_blink; or set blink (set_color -o red)
-    set -q colored_man_pages_bold; and set bold $colored_man_pages_bold; or set bold (set_color -o 5fafd7)
-    set -q colored_man_pages_standout; and set standout $colored_man_pages_standout; or set standout (set_color 949494)
-    set -q colored_man_pages_underline; and set underline $colored_man_pages_underline; or set underline (set_color -u afafd7)
+    function __man_pages_color 
+        [ "$man_pages_use_ansi_escape_sequence" = yes ]; and printf $argv; or set_color $argv
+    end
+    
+    set -q man_pages_blink; and set blink (__man_pages_color $man_pages_blink); or set blink (set_color -o red)
+    set -q man_pages_bold; and set bold (__man_pages_color $man_pages_bold); or set bold (set_color -o 5fafd7)
+    set -q man_pages_standout; and set standout (__man_pages_color $man_pages_standout); or set standout (set_color 949494)
+    set -q man_pages_underline; and set underline (__man_pages_color $man_pages_underline); or set underline (set_color -u afafd7)
+    
     set end (printf "\e[0m")
     
     # less
