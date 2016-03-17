@@ -26,7 +26,6 @@ If you want to change the colors, add the following options to your `config.fish
 
 ```fish
 # Solarized Dark & Green highlight
-set -g man_pages_use_ansi_escape_sequence no
 set -g man_pages_blink -o red
 set -g man_pages_bold -o green
 set -g man_pages_standout -b black 93a1a1
@@ -35,19 +34,10 @@ set -g man_pages_underline -u 93a1a1
 
 ```fish
 # Solarized Light & Magenta highlight
-set -g man_pages_use_ansi_escape_sequence no
 set -g man_pages_blink -o red
 set -g man_pages_bold -o magenta
 set -g man_pages_standout -b white 586e75
 set -g man_pages_underline -u 586e75
 ```
 
-See also `man set_color`, or you can use **ANSI escape sequence**
-
-```fish
-set -g man_pages_use_ansi_escape_sequence yes
-set -g man_pages_blink "\e[1;38;5;175m"
-set -g man_pages_bold "\e[1;38;5;110m"
-set -g man_pages_standout "\e[38;5;255m\e[48;5;24m"
-set -g man_pages_underline "\e[4;38;5;249m"
-```
+See also `man set_color`.
