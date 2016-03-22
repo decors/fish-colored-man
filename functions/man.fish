@@ -12,7 +12,6 @@ function man --description 'Format and display manual pages'
 
     set end (printf "\e[0m")
 
-    # less
     set -lx LESS_TERMCAP_mb $blink
     set -lx LESS_TERMCAP_md $bold
     set -lx LESS_TERMCAP_me $end
@@ -21,6 +20,8 @@ function man --description 'Format and display manual pages'
     set -lx LESS_TERMCAP_us $underline
     set -lx LESS_TERMCAP_ue $end
     set -lx LESS '-R'
+
+    set -x GROFF_NO_SGR yes # fedora
 
     command man $argv
 end
