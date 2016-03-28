@@ -1,7 +1,7 @@
 function man --description 'Format and display manual pages'
     set -lx MANPATH $__fish_datadir/man $MANPATH ""
 
-    if type "fisher" ^/dev/null >&2
+    if type -q "fisher"
         set -x MANPATH {$fisher_config,$fisher_home}/man $MANPATH ""
     end
 
