@@ -21,7 +21,7 @@ function man --description 'Format and display manual pages'
     set -lx LESS_TERMCAP_ue $end
     set -lx LESS '-R'
 
-    set -x GROFF_NO_SGR yes # fedora
+    set -lx GROFF_NO_SGR yes # fedora
 
     command man $argv
 end

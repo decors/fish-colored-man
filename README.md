@@ -4,6 +4,8 @@ Color-enabled man pages plugin for fish-shell.
 
 ![ss1](https://raw.githubusercontent.com/decors/various/master/images/colored-man-pages-screenshot.png)
 
+This plugin to define the *man* function.
+
 ## Install
 
 [Fisherman](https://github.com/fisherman/fisherman)
