@@ -1,6 +1,4 @@
 function man --description 'Format and display manual pages'
-    set -lx MANPATH $__fish_datadir/man $MANPATH ""
-
     set -q man_blink; and set -l blink (set_color $man_blink); or set -l blink (set_color -o red)
     set -q man_bold; and set -l bold (set_color $man_bold); or set -l bold (set_color -o 5fafd7)
     set -q man_standout; and set -l standout (set_color $man_standout); or set -l standout (set_color 949494)
@@ -19,5 +17,16 @@ function man --description 'Format and display manual pages'
 
     set -lx GROFF_NO_SGR yes # fedora
 
+    set -lx MANPATH (string join : $MANPATH)
+    if test -z "$MANPATH"
+        type -q manpath
+        and set MANPATH (command manpath)
+    end
+    set -l fish_manpath (dirname $__fish_datadir)/fish/man
+    if test -d "$fish_manpath" -a -n "$MANPATH"
+        set MANPATH "$fish_manpath":$MANPATH
+        command man $argv
+        return
+    end
     command man $argv
 end
