@@ -1,4 +1,4 @@
-function man --description 'Format and display manual pages'
+function man --wraps man --description 'Format and display manual pages'
     set -q man_blink; and set -l blink (set_color $man_blink); or set -l blink (set_color -o red)
     set -q man_bold; and set -l bold (set_color $man_bold); or set -l bold (set_color -o 5fafd7)
     set -q man_standout; and set -l standout (set_color $man_standout); or set -l standout (set_color 949494)
