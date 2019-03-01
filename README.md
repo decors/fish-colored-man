@@ -8,7 +8,7 @@ This plugin to define the *man* function.
 
 ## Install
 
-[Fisherman](https://github.com/fisherman/fisherman)
+[Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
 fisher add decors/fish-colored-man
