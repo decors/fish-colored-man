@@ -11,7 +11,7 @@ This plugin to define the *man* function.
 [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
-fisher add decors/fish-colored-man
+fisher install decors/fish-colored-man
 ```
 
 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
