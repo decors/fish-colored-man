@@ -23,15 +23,7 @@ function man --wraps man --description 'Format and display manual pages'
         and set MANPATH (command manpath)
     end
 
-    # Check data dir for Fish 2.x compatibility
-    set -l fish_data_dir
-    if set -q __fish_data_dir
-        set fish_data_dir $__fish_data_dir
-    else
-        set fish_data_dir $__fish_datadir
-    end
-
-    set -l fish_manpath (dirname $fish_data_dir)/fish/man
+    set -l fish_manpath $__fish_data_dir/man
     if test -d "$fish_manpath" -a -n "$MANPATH"
         set MANPATH "$fish_manpath":$MANPATH
         command man $argv
